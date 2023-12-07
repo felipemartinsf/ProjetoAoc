@@ -94,7 +94,7 @@ function App() {
   useEffect(() => {
     const totalFases = data.length / 4;
   
-    if (fase === totalFases) {
+    if (fase === 5) {
       setShowCongratulations(true);
     } else if (gameStage >= 0) {
       setPergunta(data[gameStage].pergunta);
