@@ -1,0 +1,27 @@
+.container {
+    text-align: center; /* Centraliza o texto */
+    margin: 20px; /* Adiciona margem para espaçamento */
+    position: relative; /* Permite posicionar as setas em relação a este elemento */
+  }
+
+  .title {
+    font-size: 18px; /* Tamanho da fonte do título */
+    margin-bottom: 10px; /* Espaçamento inferior do título */
+  }
+
+  .square {
+    width: 10rem;
+    height: 10rem;
+    background-color: rgb(195, 195, 195);
+    text-align: center;
+    line-height: 100px;
+    border: 1px solid black; /* Adiciona borda preta */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Adiciona sombreamento */
+    display: inline-block; /* Permite que as divs fiquem lado a lado */
+    margin: 0 50px; /* Adiciona margem entre as divs */
+    cursor: pointer;
+  }
+
+  #memory{
+    height: 20rem;
+  }

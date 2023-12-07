@@ -6,7 +6,7 @@ function ChoosePath({pathEndereco,pathPipe,pathHierarquia}) {
     <div className='card'> 
     <button onClick={pathEndereco}> Endereçamento</button>
     <button onClick={pathPipe}>Pipeline</button>
-    <button onClick={pathHierarquia}>Memória Hash</button>
+    <button onClick={pathHierarquia}>Memória Cache</button>
     </div>
    </div>
   )

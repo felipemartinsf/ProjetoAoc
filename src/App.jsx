@@ -8,7 +8,8 @@ import FirstD3 from './components/FirstD3';
 import FirstD4 from './components/FirstD4';
 import ChoosePath from './components/ChoosePath';
 import Error from './components/Error';
-
+import FirstD6 from './components/FirstD6';
+import FirstD7 from './components/FirstD7';
 
 function App() {
   //perguntas e respostas
@@ -41,10 +42,10 @@ function App() {
     { text: ' A decodificação geralmente é um estágio separado, não o estágio de execução.' },
     { text: ' A busca da próxima instrução geralmente ocorre em um estágio diferente, não durante a execução.' },
     { text: 'A transferência de dados entre registradores é uma operação diferente que pode ocorrer em outros estágios, não no estágio de execução.' },
-    { pergunta: 'Como o conceito de pipeline contribui para o desempenho de uma CPU?', resp1: 'Aumentando a latência.', resp2: 'Reduzindo a complexidade da arquitetura.', resp3: 'Eliminando a necessidade de caches.', respcorreta: 'Permitindo a execução simultânea de várias instruções.' },
-    { text: ' Pipelines são projetados para reduzir a latência, não aumentá-la.' },
-    { text: '  Pipelines introduzem alguma complexidade na arquitetura, não a reduzem.' },
-    { text: 'Pipelines e caches são conceitos distintos. Os pipelines melhoram o processamento de instruções, enquanto os caches melhoram o acesso à memória. Eliminar a necessidade de caches não é um objetivo dos pipelines.' },
+    { pergunta: 'Qual desses não é um ponto negativo do pipeline?', resp1: ' Conflito de dados ', resp2: 'Conflito estrutural', resp3: 'Conflito de controle', respcorreta: 'Conflito de instrução' },
+    { text: 'Conflitos de dados ocorrem quando uma instrução depende de outra que ainda não foi completamente processada.' },
+    { text: 'Conflitos estruturais ocorrem quando mais de uma instrução requerem acesso a um mesmo componente simultaneamente.' },
+    { text: 'Conflitos de controle ocorrem quando temos instruções de desvio.' },
     { pergunta: 'Qual é o objetivo principal do uso de pipelines em CPUs?', resp1: 'Reduzir o consumo de energia', resp2: 'Aumentar a complexidade do processamento.', resp3: 'Melhorar a capacidade de armazenamento.', respcorreta: 'Executar várias instruções simultaneamente.' },
     { text: ' O objetivo principal dos pipelines não é reduzir o consumo de energia, mas melhorar o desempenho e a eficiência do processamento de instruções.' },
     { text: 'Embora os pipelines introduzam alguma complexidade, seu principal objetivo não é aumentar a complexidade, mas melhorar a eficiência.' },
@@ -53,26 +54,26 @@ function App() {
     { text: 'Esta opção não reflete as fases padrão de um pipeline em arquitetura de computadores.' },
     { text: 'As fases mencionadas (Entrada, Processamento, Saída, Armazenamento, Controle) não representam as etapas de um pipeline em arquitetura de computadores, mas parecem mais relacionadas a um sistema de computação em geral.' },
     { text: 'Pipelines e caches são conceitos distintos. Os pipelines melhoram o processamento de instruções, enquanto os caches melhoram o acesso à memória. Eliminar a necessidade de caches não é um objetivo dos pipelines.' },
-    { pergunta: 'O que é uma função hash?', resp1: ' Uma função que organiza dados em uma tabela hash.', resp2: 'Uma função que realiza cálculos matemáticos complexos.', resp3: 'Uma função que aloca espaço na memória.', respcorreta: 'Uma função que transforma dados em um valor fixo de tamanho fixo.' },
-    { text: 'Uma função hash não organiza os dados em uma tabela hash. Ela gera um valor hash a partir dos dados, que é usado para indexar ou localizar dados em uma tabela hash, mas não os organiza nela.' },
-    { text: 'A complexidade dos cálculos não é uma característica intrínseca de uma função hash. O importante é que seja determinística e eficiente.' },
-    { text: 'A alocação de espaço na memória não é o propósito principal de uma função hash.' },
-    { pergunta: 'Qual é a principal vantagem do uso de tabelas hash?', resp1: 'Redução da complexidade de algoritmos.', resp2: 'Aumento da velocidade de processamento.', resp3: 'Armazenamento ilimitado de dados', respcorreta: ' Acesso direto aos elementos.' },
-    { text: ' Embora o uso de tabelas hash possa simplificar algumas operações, a redução da complexidade dos algoritmos não é sua principal vantagem.' },
-    { text: 'O aumento da velocidade é uma consequência do acesso direto, mas não é a vantagem principal.' },
-    { text: 'As tabelas hash têm limitações de tamanho e não oferecem armazenamento ilimitado.' },
-    { pergunta: 'Qual é o termo para uma função que organiza dados em uma tabela hash?', resp1: 'Cálculos matemáticos complexos.', resp2: 'Alocação dinâmica. ', resp3: 'Acesso direto.', respcorreta: 'Função Dinâmica.' },
-    { text: ' A complexidade dos cálculos não é a característica distintiva de uma função hash.' },
-    { text: ' Alocação dinâmica não está diretamente relacionada à função de uma tabela hash.' },
-    { text: 'O acesso direto refere-se à vantagem da tabela hash, não à função que organiza os dados nela.' },
-    { pergunta: 'Qual é a principal finalidade de uma tabela hash na estrutura de dados?', resp1: ' Organizar dados em ordem alfabética.', resp2: 'Facilitar a implementação de algoritmos de ordenação.', resp3: 'Alocar dinamicamente espaço na memória.', respcorreta: ' Proporcionar um acesso eficiente a dados por meio de chaves.' },
-    { text: 'A ordenação alfabética não é a função principal de uma tabela hash.' },
-    { text: 'A tabela hash não é projetada para facilitar a implementação de algoritmos de ordenação' },
-    { text: ' A alocação de espaço não é a função principal de uma tabela hash.' },
-    { pergunta: 'O que uma tabela hash proporciona para o acesso eficiente aos dados através de quê?', resp1: 'Redução da complexidade.', resp2: 'Listas ligadas. ', resp3: 'Ordenação alfabética.', respcorreta: 'Chaves.' },
-    { text: 'A tabela hash não é fundamental para reduzir a complexidade.' },
-    { text: 'Listas ligadas podem ser usadas no tratamento de colisões, mas não são o meio principal de acesso eficiente.' },
-    { text: 'A tabela hash não é projetada para ordenar dados alfabeticamente.' },
+    { pergunta: 'Qual é a função principal da memória cache em um computador?', resp1: ' Armazenar permanentemente todos os dados do sistema ', resp2: 'Gerenciar a comunicação entre o processador e periféricos', resp3: 'Aumentar a capacidade de armazenamento do disco rígido.', respcorreta: 'Agilizar o acesso à memória principal.' },
+    { text: 'Essa função é de formas de memórias não volateis, como o disco rígido ou SSD.' },
+    { text: 'Essa função é do módulo de entrada e saída.' },
+    { text: 'A memória cache não armazena dados de forma permanente, assim não expandido a capacidade de armazenamento total do disco rígido' },
+    { pergunta: 'Qual é o propósito da política de escrita write-back em sistemas de memória cache?', resp1: 'Minimizar a latência de acesso à memória cache.', resp2: 'Reduzir a quantidade de dados na memória principal.', resp3: 'Escrever na memória cache e na memória principal simultaneamente', respcorreta: "Adiar a escrita na memória principal até que seja necessário, otimizando a performance."},
+    { text: 'Essa politica de escrita não tem inlfuência sobre a latência de acesso à memória cache' },
+    { text: 'A quantidade de dados na memória principal não é influenciada pelo write-back.' },
+    { text: 'A política de escrita que funciona dessa maneira é o write-through' },
+    { pergunta: 'Qual desses não é um algoritmo de substituição de blocos?', resp1: ' LFU', resp2: 'LRU', resp3: 'FIFO', respcorreta: 'OPT' },
+    { text: 'LFU ou Least Frequently Used é um algoritmo que substitui o bloco baseado na quantidade de vezes que ele foi requerido, ou seja, o bloco menos utilizado será substituido' },
+    { text: 'LRU ou Least Recently Used é um algoritmo que substitui o bloco baseado no quão recentemente ele foi requerido, ou seja, o bloco a mais tempo na memória sem ser usado será o removido' },
+    { text: ' FIFO ou First in First Out é um algoritmo de substituição baseado no tempo em que o bloco se encontra na memória, substituindo o mais antigo.' },
+    { pergunta: 'Quando temos uma memória cache virtual, onde ela esta localizada?', resp1: 'Processador', resp2: 'MMU ', resp3: 'Memória principal', respcorreta: 'Memória Cache' },
+    { text: 'Ela não está dentro desse componente ' },
+    { text: 'Ela não está dentro desse componente' },
+    { text: 'Ela não está dentro desse componente' },
+    { pergunta: 'No mapeamento direto, quantos bits de endereço ocupa a tag?', resp1: '14', resp2: '2 ', resp3: '24', respcorreta: '6' },
+    { text: 'O identificador de linhas ocupa 14 bits.' },
+    { text: 'O identificador de palavra ocupa 2 bits.' },
+    { text: 'O endereço completo ocupa 24 bits.' },
 
   ]
   const [tries, setTries] = useState(0);
@@ -233,7 +234,7 @@ function App() {
           pathHierarquia={pathHierarquia}
         ></ChoosePath>
       )}
-      {gameStage % 4 === 0 && gameStage !== 4 && gameStage !== 12 && gameStage !==20 && gameStage!==48 && !showCongratulations &&  (
+      {gameStage % 4 === 0 && gameStage !== 4 && gameStage !== 12 && gameStage !==20 && gameStage!==48 &&  gameStage!==52 && gameStage!==56 && !showCongratulations &&  (
         <First1
           gameStage={fase}
           pergunta={pergunta}
@@ -285,6 +286,18 @@ function App() {
           error1={error1}
           error2={error2}
           error3={error3}></FirstD4>}
+
+          {gameStage === 52 && !showCongratulations && <FirstD6 passFase={passFase} reboot={reboot}></FirstD6>}
+          {gameStage === 56 && !showCongratulations && <FirstD7  gameStage={fase}
+          pergunta={pergunta}
+          resp1={resp1}
+          resp2={resp2}
+          resp3={resp3}
+          resp4={resp4}
+          passFase={passFase}
+          error1={error1}
+          error2={error2}
+          error3={error3}></FirstD7>}
 
       {showCongratulations && (
         <div>

@@ -62,7 +62,7 @@ function FirstD4({ gameStage, pergunta, resp1, resp2, resp3, resp4, passFase, er
       </div>
       <button id='gameButton'  onClick={increaseScore} style={{   position: 'absolute',
       left: buttonPosition.x,
-      top: buttonPosition.y}}>Função hash</button>
+      top: buttonPosition.y}}>FAFO</button>
       <footer>UNIFESP</footer>
     </div>
   );
