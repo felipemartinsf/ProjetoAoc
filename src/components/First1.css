@@ -1,18 +1,18 @@
 h1 {
     font-size: 2em;
     line-height: 1.1;
-    color: red;
+    color: rgb(12, 13, 13);
   }
 footer{
-    font-size: 1.5em;
+    font-size: 2em !important;
     margin-top: 2em;
-    color: green;
+    color: black;
     display: inline-block;
 }
 .box{
     display: flex;
-    height: 10em;
-    width: 10em;
+    height: 7em !important;
+    width: 25em !important;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     cursor: pointer;
     float: left;
@@ -21,10 +21,13 @@ footer{
     border-radius: 10px;
    transition: 0.4s;
    margin: 2em;
+   background-color: aliceblue;
 }
 
 .box:hover{
     transform: scale3d(1.15,1.15,1.15);
+    color: black;
+    background-color: beige;
 }
 
 .row{
@@ -34,4 +37,8 @@ footer{
 
 #row1{
     margin-bottom: 5rem;
+}
+
+button{
+    background-color: rgba(255, 255, 255, 0.445);
 }

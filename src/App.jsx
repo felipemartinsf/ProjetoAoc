@@ -4,6 +4,7 @@ import Start from './components/Start';
 import First1 from './components/First1';
 import FirstD1 from './components/FirstD1';
 import FirstD2 from './components/FirstD2';
+import FirstD3 from './components/FirstD3';
 import ChoosePath from './components/ChoosePath';
 import Error from './components/Error';
 
@@ -191,7 +192,7 @@ function App() {
           pathHierarquia={pathHierarquia}
         ></ChoosePath>
       )}
-      {gameStage % 4 === 0 && gameStage !== 4 && gameStage !== 12 && !showCongratulations && (
+      {gameStage % 4 === 0 && gameStage !== 4 && gameStage !== 12 && gameStage !==20 && !showCongratulations &&  (
         <First1
           gameStage={fase}
           pergunta={pergunta}
@@ -229,6 +230,8 @@ function App() {
         error1={error1}
         error2={error2}
         error3={error3}></FirstD2>}
+      {gameStage === 20 && !showCongratulations && <FirstD3
+        reboot={reboot} passFase={passFase}></FirstD3>}
 
       {showCongratulations && (
         <div>
