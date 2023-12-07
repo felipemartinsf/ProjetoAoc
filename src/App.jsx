@@ -91,7 +91,9 @@ function App() {
   const [countHash, setCountHash] = useState(0);
 
   useEffect(() => {
-    if (fase === 5) {
+    const totalFases = data.length / 4;
+  
+    if (fase === totalFases) {
       setShowCongratulations(true);
     } else if (gameStage >= 0) {
       setPergunta(data[gameStage].pergunta);
@@ -101,7 +103,6 @@ function App() {
       setResp4(data[gameStage].respcorreta);
     }
   }, [gameStage, data, fase]);
-
   useEffect(() => {
     if (gameStage % 4 !== 0 && gameStage > 0) {
       //cai na mensagem de erro
