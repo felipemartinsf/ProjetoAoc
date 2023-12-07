@@ -88,8 +88,7 @@ function App() {
   const [showCongratulationsMessage, setShowCongratulationsMessage] = useState(false);
   const [countPipe, setCountPipe] = useState(0);
   const [countAdress, setCountAdress] = useState(0);
-
-
+  const [countHash, setCountHash] = useState(0);
 
   useEffect(() => {
     if (fase === 5) {
@@ -155,9 +154,13 @@ function App() {
       setCountAdress((prevCountAdress) => prevCountAdress + 1);
       console.log(countAdress)
     }
-    else{
+    else if(gameStage>=20 && gameStage<40){
       setCountPipe((prevCountPipe) => prevCountPipe + 1);
       console.log(countPipe)
+    }
+    else{
+      setCountHash((prevCountHash)=> prevCountHash +1)
+      console.log(countHash)
     }
     setGameStage((prevGameStage) => prevGameStage + 1);
   };
@@ -167,9 +170,13 @@ function App() {
       setCountAdress((prevCountAdress) => prevCountAdress + 1);
       console.log(countAdress)
     }
-    else{
+    else if(gameStage>=20 && gameStage<40){
       setCountPipe((prevCountPipe) => prevCountPipe + 1);
       console.log(countPipe)
+    }
+    else{
+      setCountHash((prevCountHash)=> prevCountHash +1)
+      console.log(countHash)
     }
     setGameStage((prevGameStage) => prevGameStage + 2);
   };
@@ -179,14 +186,42 @@ function App() {
       setCountAdress((prevCountAdress) => prevCountAdress + 1);
       console.log(countAdress)
     }
-    else{
+    else if(gameStage>=20 && gameStage<40){
       setCountPipe((prevCountPipe) => prevCountPipe + 1);
       console.log(countPipe)
+    }
+    else{
+      setCountHash((prevCountHash)=> prevCountHash +1)
+      console.log(countHash)
     }
     setGameStage((prevGameStage) => prevGameStage + 3);
   };
 
+  const control = () =>{
+  const counts = [countAdress, countHash, countPipe]
+  counts.sort()
+  if(counts[2]===countPipe){
+    return 'pipeline'
+  }
+  else if(counts[2]===countHash){
+    return 'hash'
+  }
+  else if (counts[2] === countAdress){
+    return 'adress'
+  }
+  }
 
+  const controlLink = () =>{
+    if(control() === 'adress'){
+      return <a href='unifesp.br'>Adress</a>
+    }
+    else if(control() === 'pipeline'){
+      return <a href='facebook.com'> Pipeline</a>
+    }
+    else{
+      return <a>Hash</a>
+    }
+  }
   return (
     <div className="App">
       {gameStage === -2 && <Start tries={tries} pathing={choose} />}
@@ -253,6 +288,7 @@ function App() {
       {showCongratulations && (
         <div>
           <h2>Parabéns! Você respondeu todas as perguntas corretamente.</h2>
+          <p> Você errou mais em {control()}, segue link para aprender mais sobre: {controlLink()}</p>
           <button onClick={reboot}>Voltar para o início</button>
         </div>
       )}
