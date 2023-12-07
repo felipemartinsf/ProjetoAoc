@@ -52,6 +52,26 @@ function App() {
     { text: 'Esta opção não reflete as fases padrão de um pipeline em arquitetura de computadores.' },
     { text: 'As fases mencionadas (Entrada, Processamento, Saída, Armazenamento, Controle) não representam as etapas de um pipeline em arquitetura de computadores, mas parecem mais relacionadas a um sistema de computação em geral.' },
     { text: 'Pipelines e caches são conceitos distintos. Os pipelines melhoram o processamento de instruções, enquanto os caches melhoram o acesso à memória. Eliminar a necessidade de caches não é um objetivo dos pipelines.' },
+    { pergunta: 'O que é uma função hash?', resp1: ' Uma função que organiza dados em uma tabela hash.', resp2: 'Uma função que realiza cálculos matemáticos complexos.', resp3: 'Uma função que aloca espaço na memória.', respcorreta: 'Uma função que transforma dados em um valor fixo de tamanho fixo.' },
+    { text: 'Uma função hash não organiza os dados em uma tabela hash. Ela gera um valor hash a partir dos dados, que é usado para indexar ou localizar dados em uma tabela hash, mas não os organiza nela.' },
+    { text: 'A complexidade dos cálculos não é uma característica intrínseca de uma função hash. O importante é que seja determinística e eficiente.' },
+    { text: 'A alocação de espaço na memória não é o propósito principal de uma função hash.' },
+    { pergunta: 'Qual é a principal vantagem do uso de tabelas hash?', resp1: 'Redução da complexidade de algoritmos.', resp2: 'Aumento da velocidade de processamento.', resp3: 'Armazenamento ilimitado de dados', respcorreta: ' Acesso direto aos elementos.' },
+    { text: ' Embora o uso de tabelas hash possa simplificar algumas operações, a redução da complexidade dos algoritmos não é sua principal vantagem.' },
+    { text: 'O aumento da velocidade é uma consequência do acesso direto, mas não é a vantagem principal.' },
+    { text: 'As tabelas hash têm limitações de tamanho e não oferecem armazenamento ilimitado.' },
+    { pergunta: 'Qual é o termo para uma função que organiza dados em uma tabela hash?', resp1: 'Cálculos matemáticos complexos.', resp2: 'Alocação dinâmica. ', resp3: 'Acesso direto.', respcorreta: 'Função Hash.' },
+    { text: ' A complexidade dos cálculos não é a característica distintiva de uma função hash.' },
+    { text: ' Alocação dinâmica não está diretamente relacionada à função de uma tabela hash.' },
+    { text: 'O acesso direto refere-se à vantagem da tabela hash, não à função que organiza os dados nela.' },
+    { pergunta: 'Qual é a principal finalidade de uma tabela hash na estrutura de dados?', resp1: ' Organizar dados em ordem alfabética.', resp2: 'Facilitar a implementação de algoritmos de ordenação.', resp3: 'Alocar dinamicamente espaço na memória.', respcorreta: ' Proporcionar um acesso eficiente a dados por meio de chaves.' },
+    { text: 'A ordenação alfabética não é a função principal de uma tabela hash.' },
+    { text: 'A tabela hash não é projetada para facilitar a implementação de algoritmos de ordenação' },
+    { text: ' A alocação de espaço não é a função principal de uma tabela hash.' },
+    { pergunta: 'O que uma tabela hash proporciona para o acesso eficiente aos dados através de quê?', resp1: 'Redução da complexidade.', resp2: 'Listas ligadas. ', resp3: 'Ordenação alfabética.', respcorreta: 'Chaves.' },
+    { text: 'A tabela hash não é fundamental para reduzir a complexidade.' },
+    { text: 'Listas ligadas podem ser usadas no tratamento de colisões, mas não são o meio principal de acesso eficiente.' },
+    { text: 'A tabela hash não é projetada para ordenar dados alfabeticamente.' },
 
   ]
   const [tries, setTries] = useState(0);
@@ -107,7 +127,7 @@ function App() {
 
   const pathHierarquia = () => {
     
-    setGameStage(20);
+    setGameStage(40);
     setShowCongratulationsMessage(false);
   };
 
