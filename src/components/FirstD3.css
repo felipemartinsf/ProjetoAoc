@@ -15,6 +15,7 @@
     margin: 1.5em;
     padding: 1.5em;
     border: 10px solid gold;
+    border-radius: 1rem;
     display: flex;
 }
 

@@ -72,7 +72,7 @@ function FirstD3({ reboot, passFase }) {
     <div className="FirstD3">
 
       <h1>Adivinhe a palavra:</h1>
-
+    <p>~erro~</p>
       <div className="wordContainer">
         {letters.map((letters, i) => (guessedLetters.includes(letters) ? (<span key={i} className='letter'>{letters}</span>) : (<span key={i} className='blankSquare'></span>)))}
       </div>

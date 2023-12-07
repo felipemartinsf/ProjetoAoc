@@ -5,6 +5,7 @@ import First1 from './components/First1';
 import FirstD1 from './components/FirstD1';
 import FirstD2 from './components/FirstD2';
 import FirstD3 from './components/FirstD3';
+import FirstD4 from './components/FirstD4';
 import ChoosePath from './components/ChoosePath';
 import Error from './components/Error';
 
@@ -60,7 +61,7 @@ function App() {
     { text: ' Embora o uso de tabelas hash possa simplificar algumas operações, a redução da complexidade dos algoritmos não é sua principal vantagem.' },
     { text: 'O aumento da velocidade é uma consequência do acesso direto, mas não é a vantagem principal.' },
     { text: 'As tabelas hash têm limitações de tamanho e não oferecem armazenamento ilimitado.' },
-    { pergunta: 'Qual é o termo para uma função que organiza dados em uma tabela hash?', resp1: 'Cálculos matemáticos complexos.', resp2: 'Alocação dinâmica. ', resp3: 'Acesso direto.', respcorreta: 'Função Hash.' },
+    { pergunta: 'Qual é o termo para uma função que organiza dados em uma tabela hash?', resp1: 'Cálculos matemáticos complexos.', resp2: 'Alocação dinâmica. ', resp3: 'Acesso direto.', respcorreta: 'Função Dinâmica.' },
     { text: ' A complexidade dos cálculos não é a característica distintiva de uma função hash.' },
     { text: ' Alocação dinâmica não está diretamente relacionada à função de uma tabela hash.' },
     { text: 'O acesso direto refere-se à vantagem da tabela hash, não à função que organiza os dados nela.' },
@@ -185,23 +186,7 @@ function App() {
     setGameStage((prevGameStage) => prevGameStage + 3);
   };
 
-  const control = () =>{
-    if(countAdress>=countPipe){
-      return 'endereçamento'
-    }
-    else if (countPipe>countAdress){
-      return 'pipeline'
-    }
-  }
 
-  const controlLink = () =>{
-    if(control() === 'endereçamento'){
-      return <a href='unifesp.br'>Adress</a>
-    }
-    else{
-      return <a href='facebook.com'> Pipeline</a>
-    }
-  }
   return (
     <div className="App">
       {gameStage === -2 && <Start tries={tries} pathing={choose} />}
@@ -212,7 +197,7 @@ function App() {
           pathHierarquia={pathHierarquia}
         ></ChoosePath>
       )}
-      {gameStage % 4 === 0 && gameStage !== 4 && gameStage !== 12 && gameStage !==20 && !showCongratulations &&  (
+      {gameStage % 4 === 0 && gameStage !== 4 && gameStage !== 12 && gameStage !==20 && gameStage!==48 && !showCongratulations &&  (
         <First1
           gameStage={fase}
           pergunta={pergunta}
@@ -252,11 +237,22 @@ function App() {
         error3={error3}></FirstD2>}
       {gameStage === 20 && !showCongratulations && <FirstD3
         reboot={reboot} passFase={passFase}></FirstD3>}
+        
+        {gameStage === 48 && !showCongratulations && <FirstD4
+          gameStage={fase}
+          pergunta={pergunta}
+          resp1={resp1}
+          resp2={resp2}
+          resp3={resp3}
+          resp4={resp4}
+          passFase={passFase}
+          error1={error1}
+          error2={error2}
+          error3={error3}></FirstD4>}
 
       {showCongratulations && (
         <div>
           <h2>Parabéns! Você respondeu todas as perguntas corretamente.</h2>
-          <p> Você errou mais em {control()}, segue link para aprender mais sobre: {controlLink()}</p>
           <button onClick={reboot}>Voltar para o início</button>
         </div>
       )}
