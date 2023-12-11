@@ -25,7 +25,7 @@ function FirstD4({ gameStage, pergunta, resp1, resp2, resp3, resp4, passFase, er
   useEffect(() => {
     const intervalo = setInterval(() => {
       setValor((prevValor) => prevValor + 1);
-    }, 800);
+    }, 700);
 
     // Limpando o intervalo quando o componente é desmontado
     return () => clearInterval(intervalo);

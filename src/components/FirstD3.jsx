@@ -1,4 +1,4 @@
-import './FirstD3.css'
+import styles from './FirstD3.module.css'
 //react
 import { useRef, useEffect, useState } from "react"
 //data
@@ -72,22 +72,19 @@ function FirstD3({ reboot, passFase }) {
     <div className="FirstD3">
 
       <h1>Adivinhe a palavra:</h1>
-      <h2>Pipeline</h2>
-    <p>erro</p>
-      <div className="wordContainer">
-        {letters.map((letters, i) => (guessedLetters.includes(letters) ? (<span key={i} className='letter'>{letters}</span>) : (<span key={i} className='blankSquare'></span>)))}
+      <h2 className={styles.words}>Pipeline</h2>
+    <p className={styles.p}>erro</p>
+      <div className={styles.wordContainer}>
+        {letters.map((letters, i) => (guessedLetters.includes(letters) ? (<span key={i} className={styles.letter}>{letters}</span>) : (<span key={i} className={styles.blankSquare}></span>)))}
       </div>
-      <div className="letterContainer">
-        <p>Tente adivinhar a letra da palavra</p>
+      <div className={styles.letterContainer}>
         <form onSubmit={handleSubmit}>
           <input type="text" name='letter' maxLength='1' required onChange={(e) => setLetter(e.target.value)} value={letter}
             ref={letterInputRef} />
           <button onClick={verify}> Jogar! </button>
         </form>
       </div>
-      <div className="wrongLetters">
 
-      </div>
     </div>
   )
 }

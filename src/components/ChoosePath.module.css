@@ -1,0 +1,66 @@
+.ChoosePath{
+    display: flex;
+    justify-content: space-around;
+	flex-direction: column;
+ 
+}
+.row{
+	display: flex;
+	flex-direction: row;
+}
+
+.sub{
+	color: gold;
+	animation: colorChange 1.5s infinite;
+}
+
+@keyframes colorChange {
+	0% {
+	  color: gold;
+	}
+	50% {
+	  color: rgb(255, 255, 255);
+	}
+	100% {
+	  color: gold;
+	}
+  }
+  
+.card{
+	font-weight: bold;
+	margin-left: 2rem;
+	width:15rem;
+	height:25rem;
+	border-radius:10px;
+	border:solid 1px gray;
+	float: left;
+	position: relative;
+	font-size: 20px;
+	text-align: center;
+    background-color: rgb(209, 203, 203);
+	 box-shadow: gold 0px 5px 15px;
+	line-height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+	transition: 0.4s;
+    flex-direction: column;
+	cursor: pointer;
+	margin-top: 1rem;
+}
+
+.card:hover{
+	transform: scale3d(1.15,1.15,1.15);
+    color: black;
+    background-color: beige;
+}
+
+button{
+    background-color: rgba(255, 255, 255, 0.445);
+	width: 200px;
+}
+
+.images{
+	width: 50%;
+	height: 10vh;
+}

@@ -19,6 +19,13 @@
     display: flex;
 }
 
+.words{
+    color: azure;
+   
+}
+.p{
+    color:rgb(75, 74, 74);
+}
 .letter, .blankSquare{
     font-size: 70px;
     line-height: 1.5;

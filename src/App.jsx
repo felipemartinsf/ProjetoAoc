@@ -10,6 +10,7 @@ import ChoosePath from './components/ChoosePath';
 import Error from './components/Error';
 import FirstD6 from './components/FirstD6';
 import FirstD7 from './components/FirstD7';
+import FirstD5 from './components/FirstD5';
 
 function App() {
   //perguntas e respostas
@@ -147,6 +148,14 @@ function App() {
     setFase(0)
   };
 
+  
+  const won = () => {
+    setShowCongratulationsMessage(false); // Esconder a mensagem de parabéns ao voltar para o início
+    setShowCongratulations(false);
+    setGameStage(-2);
+    setFase(0)
+  };
+  
   const choose = () => {
     setGameStage(-1);
   };
@@ -199,31 +208,7 @@ function App() {
     setGameStage((prevGameStage) => prevGameStage + 3);
   };
 
-  const control = () =>{
-  const counts = [countAdress, countHash, countPipe]
-  counts.sort()
-  if(counts[2]===countPipe){
-    return 'pipeline'
-  }
-  else if(counts[2]===countHash){
-    return 'hash'
-  }
-  else if (counts[2] === countAdress){
-    return 'adress'
-  }
-  }
 
-  const controlLink = () =>{
-    if(control() === 'adress'){
-      return <a href='unifesp.br'>Adress</a>
-    }
-    else if(control() === 'pipeline'){
-      return <a href='facebook.com'> Pipeline</a>
-    }
-    else{
-      return <a>Hash</a>
-    }
-  }
   return (
     <div className="App">
       {gameStage === -2 && <Start tries={tries} pathing={choose} />}
@@ -234,7 +219,7 @@ function App() {
           pathHierarquia={pathHierarquia}
         ></ChoosePath>
       )}
-      {gameStage % 4 === 0 && gameStage !== 4 && gameStage !== 12 && gameStage !==20 && gameStage!==48 &&  gameStage!==52 && gameStage!==56 && !showCongratulations &&  (
+      {gameStage % 4 === 0 && gameStage !== 4 && gameStage !== 12 && gameStage !==20 && gameStage!==24 && gameStage!==48 &&  gameStage!==52 && gameStage!==56 && !showCongratulations &&  (
         <First1
           gameStage={fase}
           pergunta={pergunta}
@@ -274,6 +259,19 @@ function App() {
         error3={error3}></FirstD2>}
       {gameStage === 20 && !showCongratulations && <FirstD3
         reboot={reboot} passFase={passFase}></FirstD3>}
+
+        {gameStage === 24 && !showCongratulations && <FirstD5
+          gameStage={fase}
+          pergunta={pergunta}
+          resp1={resp1}
+          resp2={resp2}
+          resp3={resp3}
+          resp4={resp4}
+          passFase={passFase}
+          error1={error1}
+          error2={error2}
+          error3={error3}></FirstD5>}
+
         
         {gameStage === 48 && !showCongratulations && <FirstD4
           gameStage={fase}
@@ -301,9 +299,8 @@ function App() {
 
       {showCongratulations && (
         <div>
-          <h2>Parabéns! Você respondeu todas as perguntas corretamente.</h2>
-          <p> Você errou mais em {control()}, segue link para aprender mais sobre: {controlLink()}</p>
-          <button onClick={reboot}>Voltar para o início</button>
+          <h2  style={{ color: 'gold' }}>Parabéns! Você respondeu todas as perguntas corretamente.</h2>
+          <button onClick={won}>Voltar para o início</button>
         </div>
       )}
 

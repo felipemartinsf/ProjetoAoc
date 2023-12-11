@@ -1,19 +1,20 @@
 h1 {
     font-size: 2em;
     line-height: 1.1;
-    color: rgb(12, 13, 13);
+    color: rgb(255, 255, 255);
   }
 footer{
     font-size: 2em !important;
     margin-top: 2em;
-    color: black;
+    color:gold;
     display: inline-block;
 }
 .box{
+    font-weight: bold !important;
     display: flex;
     height: 7em !important;
     width: 25em !important;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: gold 0px 5px 15px !important;
     cursor: pointer;
     float: left;
     justify-content: center;
