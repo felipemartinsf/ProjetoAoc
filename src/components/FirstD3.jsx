@@ -62,7 +62,6 @@ function FirstD3({ reboot, passFase }) {
   useEffect(()=>{
     let wordLetters = word.split("") // isso vai separar em letras
     wordLetters = wordLetters.map((i) => i.toLowerCase())
-    console.log(wordLetters)
     //states
     setLetters(wordLetters)
     clearLetterStates()
